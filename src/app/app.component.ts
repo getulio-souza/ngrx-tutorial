@@ -5,7 +5,7 @@ import { LivroService } from '../livros/livro.service';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
-import { livroAction } from '../livros/state/livros.actions';
+import { livrosAction } from '../livros/state/livros.actions';
 
 @Component({
   selector: 'app-root',
@@ -25,6 +25,6 @@ export class AppComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.store.dispatch(livroAction.loadBooks())
+    this.store.dispatch(livrosAction.loadBooks())
   }
 }

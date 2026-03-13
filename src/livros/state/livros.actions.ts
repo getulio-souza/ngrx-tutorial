@@ -2,6 +2,6 @@ import { createAction } from "@ngrx/store";
 
 const loadBooks = createAction('[Livros] Carregar Livros')
 
-export const livroAction = {
+export const livrosAction = {
   loadBooks
 }

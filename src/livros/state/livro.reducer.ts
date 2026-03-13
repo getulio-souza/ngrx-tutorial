@@ -1,7 +1,7 @@
 import { createReducer } from "@ngrx/store";
 import { Livro } from "../livro.model";
 import { on } from "events";
-import { livroAction } from "./livros.actions";
+import { livrosAction } from "./livros.actions";
 
 enum LivroStatus{
   loading = 'loading',
@@ -24,17 +24,17 @@ const initialState: LivrosState = {
 
 export const livroReducer = createReducer(
   initialState,
-  on(livroAction.loadBooks, (stateAtual) => {
-    return {
+  on(livrosAction.loadBooks, (stateAtual)=> {
+    return{
       ...stateAtual,
-      livros: initialBooks,
+      livros: livrosIniciais,
       status: LivroStatus.success
     }
   })
 )
 
-const initialBooks = [
-      {
+const livrosIniciais = [
+   {
         id: 1,
         nome: 'harry potter 1'
       },
@@ -46,4 +46,4 @@ const initialBooks = [
         id: 1,
         nome: 'harry potter 3'
       },
-    ]
+]
