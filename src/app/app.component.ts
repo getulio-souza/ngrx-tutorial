@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { livrosAction } from '../livros/state/livros.actions';
+import { livrosSelector } from '../livros/state/livros.selector';
 
 @Component({
   selector: 'app-root',
@@ -21,7 +22,7 @@ export class AppComponent implements OnInit {
 
   title = 'ngrx-tutorial';
 
-  livros$ = this.livroService.obterLivrosApi()
+  livros$ = this.store.select(livrosSelector)
 
 
   ngOnInit(): void {

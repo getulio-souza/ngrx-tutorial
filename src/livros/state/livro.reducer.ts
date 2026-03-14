@@ -1,6 +1,5 @@
-import { createReducer } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
 import { Livro } from "../livro.model";
-import { on } from "events";
 import { livrosAction } from "./livros.actions";
 
 enum LivroStatus{
