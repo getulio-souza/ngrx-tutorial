@@ -24,10 +24,10 @@ const initialState: LivrosState = {
 export const livroReducer = createReducer(
   initialState,
   on(livrosAction.loadBooks, (stateAtual)=> {
+    console.log('passou por aqui:', stateAtual)
     return{
       ...stateAtual,
-      livros: livrosIniciais,
-      status: LivroStatus.success
+      status: LivroStatus.loading
     }
   })
 )
