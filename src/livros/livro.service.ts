@@ -29,6 +29,6 @@ export class LivroService {
   //o of transforma o array de livros em um observable
   obterLivrosApi() {
     return of(this.obterLivros())
-    .pipe(delay(3000))
+    .pipe(delay(1000))
   }
 }

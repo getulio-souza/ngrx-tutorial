@@ -27,7 +27,7 @@ export const livroReducer = createReducer(
     console.log('passou por aqui:', stateAtual)
     return{
       ...stateAtual,
-      status: LivroStatus.loading
+      status: LivroStatus.success
     }
   })
 )
