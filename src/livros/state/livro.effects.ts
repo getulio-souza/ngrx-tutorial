@@ -14,8 +14,7 @@ export const buscarLivroEffect = createEffect(
       tap(()=> console.log('passou pelo effect')),
       switchMap(() => livroService.obterLivrosApi()
         .pipe(
-          map(livros => livrosAction.loadBooksSuccessfully({ livros })),
-          catchError(err => console.error(err) )
+          map(livros => livrosAction.loadBooksSuccessfully({ livros }))
         )
       )
     );
