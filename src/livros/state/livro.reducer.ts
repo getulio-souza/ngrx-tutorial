@@ -29,20 +29,19 @@ export const livroReducer = createReducer(
       ...stateAtual,
       status: LivroStatus.success
     }
+  }),
+
+  on(livrosAction.loadBooksSuccessfully, (stateAtual, livrosObj) => {
+    return {
+      ...stateAtual,
+      livros: livrosObj.livros
+    }
+  }),
+
+  on(livrosAction.addBooks, (stateAtual, livro) => {
+    return {
+      ...stateAtual,
+      livros: [...stateAtual.livros, livro]
+    }
   })
 )
-
-const livrosIniciais = [
-   {
-        id: 1,
-        nome: 'harry potter 1'
-      },
-      {
-        id: 1,
-        nome: 'harry potter 2'
-      },
-      {
-        id: 1,
-        nome: 'harry potter 3'
-      },
-]

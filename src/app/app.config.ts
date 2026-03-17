@@ -6,8 +6,14 @@ import { provideClientHydration, withEventReplay } from '@angular/platform-brows
 import { provideStore } from '@ngrx/store';
 import { appReducers } from './state/app.reducers';
 import { provideEffects } from '@ngrx/effects';
+import { buscarLivroEffect } from '../livros/state/livro.effects';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
-    provideClientHydration(withEventReplay()), provideStore(appReducers), provideEffects()]
+  providers: [
+    provideZoneChangeDetection({ eventCoalescing: true }),
+    provideRouter(routes),
+    provideClientHydration(withEventReplay()),
+    provideStore(appReducers),
+    provideEffects({ buscarLivroEffect }) // ✅ Chave do objeto = nome da variável
+  ],
 };

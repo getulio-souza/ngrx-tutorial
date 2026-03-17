@@ -4,3 +4,8 @@
 <div *ngFor="let livro of livros$ | async">
   <p>{{livro.nome}}</p>
 </div>
+
+<div>
+  <input [(ngModel)]="livroInput" type="text">
+  <button (click)="addBook()">add book</button>
+</div>
